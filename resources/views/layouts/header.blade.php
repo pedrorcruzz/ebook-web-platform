@@ -1,6 +1,7 @@
 <nav class="bg-gray-800 p-4 fixed w-full top-0 z-50">
     <div class="flex justify-between items-center">
-        <div class="text-white text-xl font-bold">
+        <div class="flex items-center text-white text-xl font-bold">
+            <img src="{{ asset('images/meulivro.png') }}" alt="Logo" class="h-8 w-8 mr-2 rounded-full">
             Meu Livro
         </div>
         <ul id="menu" class="hidden lg:flex space-x-8 flex-1 justify-center">
