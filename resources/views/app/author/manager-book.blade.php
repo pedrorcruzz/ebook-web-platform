@@ -10,12 +10,14 @@
                     <h2 class="text-xl font-bold mb-4">Menu</h2>
                     <ul>
                         <li class="mb-2">
-                            <a href="{{ route('app.author.register-book') }}" class="bg-blue-500 text-white font-bold text-lg inline-block hover:bg-blue-600 rounded px-4 py-2">
+                            <a href="{{ route('app.author.register-book') }}"
+                                class="bg-blue-500 text-white font-bold text-lg inline-block hover:bg-blue-600 rounded px-4 py-2">
                                 Adicionar Livro
                             </a>
                         </li>
                         <li class="mb-2">
-                            <a href="{{ route('app.author.profile') }}" class="text-blue-500 hover:underline">Voltar ao Perfil</a>
+                            <a href="{{ route('app.author.profile') }}" class="text-blue-500 hover:underline">Voltar ao
+                                Perfil</a>
                         </li>
                     </ul>
                 </div>
@@ -24,7 +26,7 @@
                 <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     <h2 class="text-2xl font-bold mb-6">Meus Livros</h2>
 
-                    @if(session('success'))
+                    @if (session('success'))
                         <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
                             {{ session('success') }}
                         </div>
@@ -35,26 +37,26 @@
                             <div class="border rounded-lg p-4 flex justify-between items-center">
                                 <div class="flex items-center space-x-4">
                                     <img src="{{ $livro->cover_image ? asset('storage/' . $livro->cover_image) : 'https://via.placeholder.com/150' }}"
-                                         alt="{{ $livro->title }}"
-                                         class="w-20 h-20 object-cover rounded">
+                                        alt="{{ $livro->title }}" class="w-20 h-20 object-cover rounded">
                                     <div>
                                         <h3 class="font-bold text-lg">{{ $livro->title }}</h3>
                                         <p class="text-gray-600">Gênero: {{ $livro->genre }}</p>
                                         <p class="text-gray-600">ISBN: {{ $livro->isbn }}</p>
-                                        <p class="text-sm text-gray-500">Publicado em: {{ \Carbon\Carbon::parse($livro->publication_date)->format('d/m/Y') }}</p>
+                                        <p class="text-sm text-gray-500">Publicado em:
+                                            {{ \Carbon\Carbon::parse($livro->publication_date)->format('d/m/Y') }}</p>
                                     </div>
                                 </div>
                                 <div class="flex space-x-2">
                                     <a href="{{ route('books.edit', $livro->id) }}"
-                                       class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">
+                                        class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">
                                         Editar
                                     </a>
                                     <form action="{{ route('books.destroy', $livro->id) }}" method="POST" class="inline">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit"
-                                                class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
-                                                onclick="return confirm('Tem certeza que deseja excluir este livro?')">
+                                            class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+                                            onclick="return confirm('Tem certeza que deseja excluir este livro?')">
                                             Excluir
                                         </button>
                                     </form>

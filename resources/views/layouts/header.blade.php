@@ -11,7 +11,8 @@
         <div class="flex items-center space-x-4">
             @auth
                 <div class="relative">
-                    <button id="user-menu-toggle" class="flex items-center bg-gray-700 text-white px-4 py-2 rounded-full focus:outline-none">
+                    <button id="user-menu-toggle"
+                        class="flex items-center bg-gray-700 text-white px-4 py-2 rounded-full focus:outline-none">
                         <!-- <span class="mr-2">{{ Auth::user()->username }}</span> -->
                         <span class="mr-2">Minha Conta</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -32,7 +33,8 @@
                 </div>
             @endauth
             @guest
-                <a href="{{ route('auth.login') }}" class="text-white hover:text-gray-300 bg-gray-700 px-4 py-2 rounded-full">
+                <a href="{{ route('auth.login') }}"
+                    class="text-white hover:text-gray-300 bg-gray-700 px-4 py-2 rounded-full">
                     Entrar
                 </a>
             @endguest
@@ -40,7 +42,8 @@
         <div class="block lg:hidden ml-4">
             <button id="menu-toggle" class="text-white focus:outline-none">
                 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
                 </svg>
             </button>
         </div>
@@ -82,4 +85,5 @@
         });
     });
     @endauth
-</script><
+</script>
+<
