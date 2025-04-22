@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('book', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_author_id'); // Chave estrangeira para o autor
+            $table->unsignedBigInteger('user_author_id');
             $table->string('title', 255);
             $table->string('genre', 100);
             $table->string('isbn', 13)->unique();
