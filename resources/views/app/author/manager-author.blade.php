@@ -77,7 +77,7 @@
                                             alt="Foto de Perfil Atual"
                                             class="w-24 h-24 rounded-full shadow-md object-cover">
                                     @else
-                                        <img src="https://ui-avatars.com/api/?name={{ urlencode($user->username) }}&background=4F46E5&color=fff&size=96"
+                                        <img src="https://ui-avatars.com/api/?name={{ urlencode($user->username) }}&background=5046E5&color=fff&size=96"
                                             alt="Foto de Perfil Atual"
                                             class="w-24 h-24 rounded-full shadow-md object-cover">
                                     @endif

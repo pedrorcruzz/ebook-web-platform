@@ -116,7 +116,6 @@
             });
         }
 
-        // Mobile dropdown
         const mobileAccountToggle = document.getElementById('mobile-account-toggle');
         const mobileAccountMenu = document.getElementById('mobile-account-menu');
         const mobileAccountArrow = document.getElementById('mobile-account-arrow');
@@ -144,4 +143,4 @@
         }
     });
     @endauth
-</script>a href="{{ route('app.index') }}" c
+</script>
