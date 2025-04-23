@@ -65,7 +65,7 @@
                         @empty
                             <div class="text-center text-gray-500">
                                 Você ainda não cadastrou nenhum livro.
-                                <a href="{{ route('app.author.register-book') }}" class="text-blue-500 hover:underline">
+                                <a href="{{ route('app.author.register-book') }}" class="text-indigo-400 hover:underline">
                                     Cadastre seu primeiro livro aqui!
                                 </a>
                             </div>
