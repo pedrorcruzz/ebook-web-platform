@@ -11,7 +11,7 @@ Meu Livro is a fast and efficient ecommerce system focused on buying and selling
 
 | Desktop | Mobile |
 |----------|----------|
-| ![Image 3](./thumbnail/caputre3.png) | ![Image 4](./thumbnail/mobilecapture.png) |
+| ![Image 3](./thumbnail/capture3.png) | ![Image 4](./thumbnail/mobilecapture.png) |
 
 
 
