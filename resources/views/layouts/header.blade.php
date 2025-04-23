@@ -1,4 +1,4 @@
-<nav class="bg-gray-800 p-4 fixed w-full top-0 z-50">
+<nav class="bg-indigo-900 p-4 fixed w-full top-0 z-50">
     <div class="flex justify-between items-center">
         <div class="flex items-center text-white text-xl font-bold">
             <img src="{{ asset('images/meulivro.png') }}" alt="Logo" class="h-8 w-8 mr-2 rounded-full">
@@ -20,7 +20,7 @@
             @auth
                 <div class="relative hidden lg:block">
                     <button id="user-menu-toggle"
-                        class="flex items-center bg-gray-700 text-white px-4 py-2 rounded-full focus:outline-none">
+                        class="flex items-center bg-indigo-600 text-white px-4 py-2 rounded-full focus:outline-none">
                         <span class="mr-2">Minha Conta</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -41,7 +41,7 @@
             @endauth
             @guest
                 <a href="{{ route('auth.login') }}"
-                    class="text-white hover:text-gray-300 bg-gray-700 px-4 py-2 rounded-full">
+                    class="text-white hover:text-gray-300 bg-indigo-600 px-4 py-2 rounded-full">
                     Entrar
                 </a>
             @endguest
@@ -63,14 +63,14 @@
         @auth
             <li>
                 <button id="mobile-account-toggle"
-                    class="w-full text-left text-white font-bold bg-gray-700 rounded-lg px-4 py-2 flex items-center justify-between focus:outline-none">
+                    class="w-full text-left text-white font-bold bg-indigo-600 rounded-lg px-4 py-2 flex items-center justify-between focus:outline-none">
                     Minha Conta
                     <svg id="mobile-account-arrow" class="w-4 h-4 ml-2 transform transition-transform" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
-                <div id="mobile-account-menu" class="hidden bg-gray-700 rounded-lg mt-2 px-4 py-2">
+                <div id="mobile-account-menu" class="hidden bg-indigo-600 rounded-lg mt-2 px-4 py-2">
                     <a href="{{ route('app.author.profile') }}"
                         class="block text-gray-200 py-1 hover:bg-gray-600 rounded">Perfil</a>
                     <form method="POST" action="{{ route('auth.logout') }}">

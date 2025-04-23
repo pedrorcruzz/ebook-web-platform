@@ -1,4 +1,4 @@
-<footer class="bg-gray-800 text-gray-200 pt-10 pb-4">
+<footer class="bg-indigo-900 text-gray-200 pt-10 pb-4">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 border-b border-gray-700 pb-8">
             <div>
@@ -46,12 +46,14 @@
                 <span class="ml-2 text-gray-400 text-sm">&copy; {{ date('Y') }} Meu Livro, Inc.</span>
             </div>
         </div>
-        <div class="text-center text-xs text-gray-500 mt-4">
+        <div class="text-center text-xs text-gray-400 mt-4">
             Site desenvolvido por:
-            <a href="https://github.com/pedrorcruzz" target="_blank" class="text-indigo-400 hover:underline">Pedro
+            <a href="https://github.com/pedrorcruzz" target="_blank"
+                class="text-gray-100 hover:underline hover:text-indigo-400">Pedro
                 Rosa</a>
             e
-            <a href="https://github.com/Alancfops" target="_blank" class="text-indigo-400 hover:underline">Alan
+            <a href="https://github.com/Alancfops" target="_blank"
+                class="text-gray-100 hover:underline hover:text-indigo-400">Alan
                 Cristian</a>
         </div>
     </div>
