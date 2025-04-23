@@ -7,7 +7,7 @@
         <div class="flex flex-row flex-grow">
             <div class="w-1/4 bg-white shadow-md">
                 <div class="p-4">
-                    <h2 class="text-xl font-bold mb-4">Menu</h2>
+                    <h2 class="text-xl font-bold mb-4 text-indigo-600">Menu</h2>
                     <ul>
                         <li class="mb-2">
                             <a href="{{ route('app.author.register-book') }}"
