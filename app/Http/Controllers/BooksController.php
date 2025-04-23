@@ -15,10 +15,16 @@ class BooksController extends Controller
 
     public function store(Request $request)
     {
+        $price = $request->price;
+        $price = str_replace(['.', ','], ['', '.'], $price);
+        $request->merge(['price' => $price]);
+
         $request->validate([
             'title' => 'required|string|max:255',
             'genre' => 'required|string|max:100',
             'isbn' => 'required|string|size:13|unique:book',
+            'pages' => 'nullable|integer',
+            'price' => 'required|numeric',
             'publication_date' => 'required|date',
             'description' => 'nullable|string',
             'cover_image' => 'nullable|image|max:2048',
@@ -34,6 +40,8 @@ class BooksController extends Controller
             'title' => $request->title,
             'genre' => $request->genre,
             'isbn' => $request->isbn,
+            'pages' => $request->pages,
+            'price' => $request->price,
             'publication_date' => $request->publication_date,
             'description' => $request->description,
             'cover_image' => $coverImagePath,
@@ -69,10 +77,16 @@ class BooksController extends Controller
         $livro = Book::where('user_author_id', Auth::id())
             ->findOrFail($id);
 
+        $price = $request->price;
+        $price = str_replace(['.', ','], ['', '.'], $price);
+        $request->merge(['price' => $price]);
+
         $request->validate([
             'title' => 'required|string|max:255',
             'genre' => 'required|string|max:100',
             'isbn' => 'required|string|size:13|unique:book,isbn,' . $id,
+            'pages' => 'nullable|integer',
+            'price' => 'required|numeric',
             'publication_date' => 'required|date',
             'description' => 'nullable|string',
             'cover_image' => 'nullable|image|max:2048',
