@@ -15,7 +15,7 @@
                     facilidade!
                 </p>
                 <div class="flex items-center gap-4">
-                    <a href="#"
+                    <a href="#books"
                         class="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-400 text-white font-semibold px-7 py-3 rounded-full shadow transition">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -98,7 +98,7 @@
             use Illuminate\Support\Str;
         @endphp
 
-        <div class="grid grid-cols-1 mt-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div id="books" class="grid grid-cols-1 mt-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             @forelse($livros as $livro)
                 <div class="bg-white shadow-md rounded-xl overflow-hidden transition hover:shadow-lg flex flex-col h-full">
                     <img src="{{ $livro->cover_image ? asset('storage/' . $livro->cover_image) : 'https://via.placeholder.com/150' }}"
