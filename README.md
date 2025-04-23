@@ -20,5 +20,5 @@ Meu Livro é um sistema de ecommerce onde vende ebooks
 
 ## Licença
 
-O projeto Meu Livro é um software de código aberto licenciado sob a [licença MIT](https://opensource.org/licenses/MIT).
+O projeto Meu Livro é um software de código aberto licenciado sob a [licença APACHE](LICENSE).
 
