@@ -75,7 +75,7 @@
                 </div>
             </form>
 
-            <div class="text-center mt-6 p-10">
+            <div class="text-center  p-4">
                 <a href="{{ route('auth.login') }}" class="text-base text-indigo-600 hover:text-indigo-500">
                     Já tem uma conta? Faça login
                 </a>
