@@ -5,7 +5,7 @@
 @section('content')
     <div class="flex justify-center items-center min-h-screen px-4 sm:px-6 lg:px-8 mt-14">
         <div class="w-full max-w-md">
-            <h1 class="text-2xl font-bold mb-4 text-center text-indigo-600">Cadastrar Livro</h1>
+            <h1 class="text-2xl font-bold mb-4 text-center text-indigo-600 mt-28">Cadastrar Livro</h1>
 
             @if ($errors->any())
                 <div class="mb-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
@@ -24,13 +24,14 @@
                 <div class="mb-4">
                     <label for="title" class="block text-sm font-medium text-gray-700">Título</label>
                     <input type="text" name="title" id="title" value="{{ old('title') }}" required
-                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        placeholder="Título do livro"
+                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 py-3 text-base">
                 </div>
 
                 <div class="mb-4">
                     <label for="genre" class="block text-sm font-medium text-gray-700">Gênero</label>
                     <select name="genre" id="genre" required
-                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 py-3 text-base">
                         <option value="" disabled selected>Selecione um gênero</option>
                         <option value="Ficção">Ficção</option>
                         <option value="Programação">Programação</option>
@@ -46,20 +47,21 @@
                 <div class="mb-4">
                     <label for="isbn" class="block text-sm font-medium text-gray-700">ISBN</label>
                     <input type="text" name="isbn" id="isbn" value="{{ old('isbn') }}" required maxlength="13"
-                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        placeholder="ISBN do livro"
+                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 py-3 text-base">
                 </div>
 
                 <div class="mb-4">
                     <label for="pages" class="block text-sm font-medium text-gray-700">Quantidade de Páginas</label>
                     <input type="number" name="pages" id="pages" value="{{ old('pages') }}" min="1"
-                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 py-3 text-base"
                         placeholder="Ex: 200">
                 </div>
 
                 <div class="mb-4">
                     <label for="price" class="block text-sm font-medium text-gray-700">Preço (R$)</label>
                     <input type="text" name="price" id="price" value="{{ old('price') }}" required
-                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 py-3 text-base"
                         placeholder="Ex: 00,00">
                 </div>
 
@@ -68,13 +70,13 @@
                         Publicação</label>
                     <input type="date" name="publication_date" id="publication_date"
                         value="{{ old('publication_date') }}" required
-                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 py-3 text-base">
                 </div>
 
                 <div class="mb-4">
                     <label for="description" class="block text-sm font-medium text-gray-700">Descrição</label>
-                    <textarea name="description" id="description"
-                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    <textarea name="description" id="description" placeholder="Uma breve descrição sobre o livro"
+                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 py-3 text-base"
                         rows="3">{{ old('description') }}</textarea>
                 </div>
 
@@ -91,7 +93,7 @@
 
                 <div>
                     <button type="submit"
-                        class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         Cadastrar Livro
                     </button>
                 </div>
