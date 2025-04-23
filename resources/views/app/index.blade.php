@@ -119,6 +119,12 @@
                                     {{ $livro->genre }}
                                 </span>
                             @endif
+                            @if ($livro->author->username)
+                                <span class="inline-block bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">
+                                    Autor:
+                                    {{ $livro->author->username }}
+                                </span>
+                            @endif
                             <a href="{{ route('app.books.details', ['id' => $livro->id]) }}"
                                 class="text-indigo-600 hover:underline font-semibold">Ver detalhes</a>
                         </div>

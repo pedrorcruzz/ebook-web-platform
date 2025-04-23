@@ -13,9 +13,15 @@ class AppController extends Controller
 
         if ($request->filled('search')) {
             $search = $request->search;
-            $query->where('title', 'ILIKE', "%{$search}%")
-                ->orWhere('isbn', 'ILIKE', "%{$search}%")
-                ->orWhere('genre', 'ILIKE', "%{$search}%");
+            $query->where(function ($q) use ($search) {
+                $q->where('title', 'ILIKE', "%{$search}%")
+                    ->orWhere('isbn', 'ILIKE', "%{$search}%")
+                    ->orWhere('genre', 'ILIKE', "%{$search}%");
+            });
+        }
+
+        if ($request->filled('genre')) {
+            $query->where('genre', $request->genre);
         }
 
         $livros = $query->get();
