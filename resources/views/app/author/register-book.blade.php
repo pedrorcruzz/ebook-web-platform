@@ -3,9 +3,9 @@
 @section('title', 'Cadastrar Livro')
 
 @section('content')
-    <div class="flex justify-center items-center min-h-screen px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-center items-center min-h-screen px-4 sm:px-6 lg:px-8 mt-14">
         <div class="w-full max-w-md">
-            <h1 class="text-2xl font-bold mb-4 text-center">Cadastrar Livro</h1>
+            <h1 class="text-2xl font-bold mb-4 text-center text-indigo-600">Cadastrar Livro</h1>
 
             @if ($errors->any())
                 <div class="mb-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
@@ -50,7 +50,22 @@
                 </div>
 
                 <div class="mb-4">
-                    <label for="publication_date" class="block text-sm font-medium text-gray-700">Data de Publicação</label>
+                    <label for="pages" class="block text-sm font-medium text-gray-700">Quantidade de Páginas</label>
+                    <input type="number" name="pages" id="pages" value="{{ old('pages') }}" min="1"
+                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        placeholder="Ex: 200">
+                </div>
+
+                <div class="mb-4">
+                    <label for="price" class="block text-sm font-medium text-gray-700">Preço (R$)</label>
+                    <input type="text" name="price" id="price" value="{{ old('price') }}" required
+                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        placeholder="Ex: 00,00">
+                </div>
+
+                <div class="mb-4">
+                    <label for="publication_date" class="block text-sm font-medium text-gray-700">Data de
+                        Publicação</label>
                     <input type="date" name="publication_date" id="publication_date"
                         value="{{ old('publication_date') }}" required
                         class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
@@ -83,4 +98,39 @@
             </form>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const priceInput = document.getElementById('price');
+            priceInput.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+
+                value = value.replace(/^0+/, '');
+                if (value.length < 3) {
+                    value = value.padStart(3, '0');
+                }
+
+                let cents = value.slice(-2);
+                let reais = value.slice(0, -2);
+
+                reais = reais.replace(/^0+/, '') || '0';
+
+                reais = reais.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+                e.target.value = reais + ',' + cents;
+            });
+
+            if (priceInput.value) {
+                let value = priceInput.value.replace(/\D/g, '');
+                value = value.replace(/^0+/, '');
+                if (value.length < 3) {
+                    value = value.padStart(3, '0');
+                }
+                let cents = value.slice(-2);
+                let reais = value.slice(0, -2);
+                reais = reais.replace(/^0+/, '') || '0';
+                reais = reais.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+                priceInput.value = reais + ',' + cents;
+            }
+        });
+    </script>
 @endsection

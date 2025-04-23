@@ -11,12 +11,12 @@
                     <ul>
                         <li class="mb-2">
                             <a href="{{ route('app.author.register-book') }}"
-                                class="bg-blue-500 text-white font-bold text-lg inline-block hover:bg-blue-600 rounded px-4 py-2">
+                                class="bg-indigo-600 text-white font-bold text-lg inline-block hover:bg-indigo-400 rounded px-4 py-2">
                                 Adicionar Livro
                             </a>
                         </li>
                         <li class="mb-2">
-                            <a href="{{ route('app.author.profile') }}" class="text-blue-500 hover:underline">Voltar ao
+                            <a href="{{ route('app.author.profile') }}" class="text-indigo-400 hover:underline">Voltar ao
                                 Perfil</a>
                         </li>
                     </ul>
@@ -24,7 +24,7 @@
             </div>
             <div class="flex-grow p-8">
                 <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                    <h2 class="text-2xl font-bold mb-6">Meus Livros</h2>
+                    <h2 class="text-2xl font-bold mb-6 text-indigo-600">Meus Livros</h2>
 
                     @if (session('success'))
                         <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">

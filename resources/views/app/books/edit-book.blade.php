@@ -3,8 +3,8 @@
 @section('title', 'Editar Livro')
 
 @section('content')
-    <div class="container mx-auto px-4 py-8">
-        <h1 class="text-2xl font-bold mb-6">Editar Livro</h1>
+    <div class="container mx-auto px-4 py-8 mt-14">
+        <h1 class="text-2xl font-bold mb-6 text-indigo-600">Editar Livro</h1>
         <form action="{{ route('books.update', $livro->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
@@ -25,6 +25,19 @@
                 <label for="isbn" class="block font-medium">ISBN</label>
                 <input type="text" name="isbn" id="isbn" value="{{ old('isbn', $livro->isbn) }}"
                     class="w-full border rounded px-3 py-2">
+            </div>
+
+            <div class="mb-4">
+                <label for="pages" class="block font-medium">Quantidade de Páginas</label>
+                <input type="number" name="pages" id="pages" min="1" value="{{ old('pages', $livro->pages) }}"
+                    class="w-full border rounded px-3 py-2" placeholder="Ex: 200">
+            </div>
+
+            <div class="mb-4">
+                <label for="price" class="block font-medium">Preço (R$)</label>
+                <input type="text" name="price" id="price"
+                    value="{{ old('price', number_format($livro->price, 2, ',', '.')) }}"
+                    class="w-full border rounded px-3 py-2" placeholder="Ex: 00,00">
             </div>
 
             <div class="mb-4">
@@ -49,8 +62,43 @@
                 @endif
             </div>
 
-            <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">Salvar
+            <button type="submit" class="bg-indigo-600 text-white px-6 py-2 rounded hover:bg-indigo-400">Salvar
                 Alterações</button>
         </form>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const priceInput = document.getElementById('price');
+            priceInput.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+
+                value = value.replace(/^0+/, '');
+                if (value.length < 3) {
+                    value = value.padStart(3, '0');
+                }
+
+                let cents = value.slice(-2);
+                let reais = value.slice(0, -2);
+
+                reais = reais.replace(/^0+/, '') || '0';
+
+                reais = reais.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+                e.target.value = reais + ',' + cents;
+            });
+
+            if (priceInput.value) {
+                let value = priceInput.value.replace(/\D/g, '');
+                value = value.replace(/^0+/, '');
+                if (value.length < 3) {
+                    value = value.padStart(3, '0');
+                }
+                let cents = value.slice(-2);
+                let reais = value.slice(0, -2);
+                reais = reais.replace(/^0+/, '') || '0';
+                reais = reais.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+                priceInput.value = reais + ',' + cents;
+            }
+        });
+    </script>
 @endsection

@@ -10,7 +10,7 @@
                     <h2 class="text-xl font-bold mb-4">Menu</h2>
                     <ul>
                         <li class="mb-2">
-                            <a href="{{ route('app.author.profile') }}" class="text-blue-500 hover:underline">
+                            <a href="{{ route('app.author.profile') }}" class="text-indigo-400 hover:underline">
                                 Voltar ao Perfil
                             </a>
                         </li>
@@ -19,7 +19,7 @@
             </div>
             <div class="flex-grow p-8">
                 <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                    <h2 class="text-2xl font-bold mb-6">Editar Perfil</h2>
+                    <h2 class="text-2xl font-bold mb-6 text-indigo-600">Editar Perfil</h2>
 
                     @if (session('success'))
                         <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">

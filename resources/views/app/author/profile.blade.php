@@ -11,15 +11,15 @@
                     <ul>
                         <li class="mb-2">
                             <a href="{{ route('app.author.register-book') }}"
-                                class="bg-blue-500 text-white font-bold text-lg inline-block hover:bg-blue-600 rounded px-4 py-2">
+                                class="bg-indigo-600 text-white font-bold text-lg inline-block hover:bg-indigo-400 rounded px-4 py-2">
                                 Adicionar Livro
                             </a>
                         </li>
                         <li class="mb-2"><a href="{{ route('app.author.manage-book') }}"
-                                class="text-blue-500 hover:underline">Meus Livros</a></li>
-                        <li class="mb-2"><a href="#" class="text-blue-500 hover:underline">Assinaturas</a></li>
+                                class="text-indigo-400 hover:underline">Meus Livros</a></li>
+                        <li class="mb-2"><a href="#" class="text-indigo-400 hover:underline">Assinaturas</a></li>
                         <li class="mb-2"><a href="{{ route('app.author.manage-author') }}"
-                                class="text-blue-500 hover:underline">Configurações</a></li>
+                                class="text-indigo-400 hover:underline">Configurações</a></li>
                     </ul>
                 </div>
             </div>
