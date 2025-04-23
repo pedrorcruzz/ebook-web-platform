@@ -100,7 +100,7 @@
 
         <div id="books" class="grid grid-cols-1 mt-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             @forelse($livros as $livro)
-                <div class="bg-white shadow-md rounded-xl overflow-hidden transition hover:shadow-lg flex flex-col h-full">
+                <div class="bg-white shadow-md rounded-xl overflow-hidden flex flex-col h-full">
                     <img src="{{ $livro->cover_image ? asset('storage/' . $livro->cover_image) : 'https://via.placeholder.com/150' }}"
                         alt="{{ $livro->title }}" class="w-full h-48 object-cover">
                     <div class="flex flex-col flex-1 justify-between p-4">
@@ -125,8 +125,10 @@
                                     {{ $livro->author->username }}
                                 </span>
                             @endif
-                            <a href="{{ route('app.books.details', ['id' => $livro->id]) }}"
-                                class="text-indigo-600 hover:underline font-semibold">Ver detalhes</a>
+                            <div class="flex justify-start">
+                                <a href="{{ route('app.books.details', ['id' => $livro->id]) }}"
+                                    class="inline-block text-indigo-600 hover:text-indigo-800 hover:underline font-semibold transition-colors duration-200">Ver detalhes</a>
+                            </div>
                         </div>
                     </div>
                 </div>
