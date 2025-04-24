@@ -48,7 +48,7 @@
                                 </div>
                                 <div class="flex space-x-2">
                                     <a href="{{ route('books.edit', $livro->id) }}"
-                                        class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-yellow-600">
+                                        class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-400">
                                         Editar
                                     </a>
                                     <form action="{{ route('books.destroy', $livro->id) }}" method="POST" class="inline">
